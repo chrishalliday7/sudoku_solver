@@ -1,5 +1,5 @@
 import pandas as pd
-from tests import box_rule, vertical_rule, horizontal_rule, check_rules
+from rules import box_rule, vertical_rule, horizontal_rule, check_rules
 from box_finder import box_finder
 
 def assign_starting_values(input_file):
