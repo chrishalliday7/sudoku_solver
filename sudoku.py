@@ -8,7 +8,7 @@ start_time = time.time()
 grid = assign_starting_values("input_hard.csv")
 grid_start = grid
 grid_end = None
-def solve(grid):
+def apply_strategies(grid):
     """
     Begins the solver, using 2 strategies
     Only possible squares: looks for squares that are the only place in a row/column/box that a number can go
@@ -37,13 +37,18 @@ def solve(grid):
     #    print("some candidate logic")
     return grid
 
-# Loops through the solver until all squares are filled
-for i in range(0,9):
-    for j in range(0,9):
-        if (grid[i][j] == 0):
-            solve(grid)
-        else:
-            break
+def solve(grid):
+    """
+    Loops through the grid and applies strategies until all squares 
+    are filled
+    """
+    for i in range(0,9):
+        for j in range(0,9):
+            if (grid[i][j] == 0):
+                apply_strategies(grid)
+            else:
+                break
+    return grid
 
 print("")
 print("Solved Sudoku")
